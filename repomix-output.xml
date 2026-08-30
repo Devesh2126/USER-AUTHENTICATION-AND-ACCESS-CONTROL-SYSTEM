@@ -1,0 +1,3523 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+client/
+  public/
+    favicon.svg
+    icons.svg
+  src/
+    components/
+      AuthLayout.jsx
+      FormField.jsx
+      Navbar.jsx
+      RouteGuards.jsx
+      StatusBadge.jsx
+    context/
+      AuthContext.jsx
+    pages/
+      AdminUsers.jsx
+      ChangePassword.jsx
+      Dashboard.jsx
+      ForgotPassword.jsx
+      Landing.jsx
+      Login.jsx
+      NotFound.jsx
+      Profile.jsx
+      Register.jsx
+      ResetPassword.jsx
+    services/
+      adminApi.js
+      api.js
+      userApi.js
+    utils/
+      passwordRules.js
+    App.jsx
+    index.css
+    main.jsx
+  .env.example
+  .gitignore
+  .oxlintrc.json
+  index.html
+  package.json
+  README.md
+  vite.config.js
+server/
+  local-dev-only/
+    000_mock_auth_schema.sql
+  migrations/
+    001_create_profiles.sql
+    002_create_login_attempts.sql
+    003_create_audit_logs.sql
+  src/
+    config/
+      env.js
+      supabaseClients.js
+    controllers/
+      adminController.js
+      authController.js
+      userController.js
+    db/
+      migrate.js
+      pool.js
+    middleware/
+      authenticateUser.js
+      errorHandler.js
+      rateLimiter.js
+    routes/
+      adminRoutes.js
+      authRoutes.js
+      health.js
+      users.js
+    services/
+      adminService.js
+      userService.js
+    validators/
+      passwordValidator.js
+    app.js
+    server.js
+  .env.example
+  .gitignore
+  package.json
+cookies.txt
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="client/public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="client/public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="client/src/components/AuthLayout.jsx">
+import { Link } from 'react-router-dom';
+import { ShieldCheck } from 'lucide-react';
+
+export default function AuthLayout({ title, subtitle, children }) {
+  return (
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-4">
+      <div className="w-full max-w-sm">
+        <Link
+          to="/"
+          className="flex items-center gap-2 justify-center mb-8 hover:opacity-70 transition-opacity"
+        >
+          <ShieldCheck className="w-6 h-6 text-accent" strokeWidth={2} />
+          <span className="font-display font-semibold text-lg tracking-tight">
+            SecureAuth
+          </span>
+        </Link>
+
+        <div className="bg-surface border border-border rounded-xl p-8 shadow-sm">
+          <h1 className="font-display font-semibold text-xl mb-1">{title}</h1>
+          {subtitle && <p className="text-sm text-muted mb-6">{subtitle}</p>}
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/components/FormField.jsx">
+import { useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
+
+export default function FormField({ label, id, error, type, ...inputProps }) {
+  const [showPassword, setShowPassword] = useState(false);
+  const isPassword = type === 'password';
+  // Toggling swaps the actual input type between 'password' and 'text' —
+  // there's no native "reveal" attribute, this is the standard approach.
+  const resolvedType = isPassword && showPassword ? 'text' : type;
+
+  return (
+    <div className="mb-4">
+      <label htmlFor={id} className="block text-sm font-medium text-ink mb-1.5">
+        {label}
+      </label>
+      <div className="relative">
+        <input
+          id={id}
+          name={id}
+          type={resolvedType}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${id}-error` : undefined}
+          className={`w-full px-3 py-2 rounded-lg border text-sm bg-surface
+            placeholder:text-muted/70
+            focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent
+            ${isPassword ? 'pr-10' : ''}
+            ${error ? 'border-danger' : 'border-border'}`}
+          {...inputProps}
+        />
+        {isPassword && (
+          <button
+            type="button"
+            onClick={() => setShowPassword((prev) => !prev)}
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted hover:text-ink transition-colors"
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+            tabIndex={-1}
+          >
+            {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+          </button>
+        )}
+      </div>
+      {error && (
+        <p id={`${id}-error`} className="mt-1.5 text-xs text-danger">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/components/Navbar.jsx">
+import { ShieldCheck, LogOut } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
+export default function Navbar() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    await logout();
+    navigate('/login');
+  }
+
+  return (
+    <header className="border-b border-border bg-surface">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+        <div className="flex items-center gap-6">
+          <Link to="/dashboard" className="flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-accent" strokeWidth={2} />
+            <span className="font-display font-semibold text-sm tracking-tight">SecureAuth</span>
+          </Link>
+
+          <nav className="hidden sm:flex items-center gap-4 text-sm">
+            <Link to="/dashboard" className="text-muted hover:text-ink transition-colors">
+              Dashboard
+            </Link>
+            <Link to="/profile" className="text-muted hover:text-ink transition-colors">
+              Profile
+            </Link>
+            {user?.role === 'ADMIN' && (
+              <Link to="/admin/users" className="text-muted hover:text-ink transition-colors">
+                Admin
+              </Link>
+            )}
+          </nav>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <span className="text-sm text-muted hidden sm:inline">{user?.email}</span>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-1.5 text-sm text-muted hover:text-ink transition-colors"
+          >
+            <LogOut className="w-4 h-4" />
+            Log out
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+</file>
+
+<file path="client/src/components/RouteGuards.jsx">
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
+// Loading state prevents a flash of the login page while we're still
+// checking whether a session cookie exists — without this, every reload
+// would briefly show "logged out" even for an already-logged-in user.
+function LoadingScreen() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-paper">
+      <div className="font-mono text-sm text-muted">Checking session…</div>
+    </div>
+  );
+}
+
+export function ProtectedRoute({ children }) {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) return <LoadingScreen />;
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
+
+  return children;
+}
+
+// IMPORTANT: this check is a UX convenience only — it hides admin nav
+// items from users who shouldn't see them. It is NOT a security boundary.
+// requireRole('ADMIN') on the backend is what actually protects admin
+// data; even if someone bypassed this component entirely, every admin
+// API call would still be rejected server-side.
+export function AdminRoute({ children }) {
+  const { isAuthenticated, loading, user } = useAuth();
+
+  if (loading) return <LoadingScreen />;
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
+  if (user.role !== 'ADMIN') return <Navigate to="/dashboard" replace />;
+
+  return children;
+}
+</file>
+
+<file path="client/src/components/StatusBadge.jsx">
+export default function StatusBadge({ active, activeLabel, inactiveLabel }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium
+        ${active ? 'bg-success-bg text-success' : 'bg-danger-bg text-danger'}`}
+    >
+      <span className={`w-1.5 h-1.5 rounded-full ${active ? 'bg-success' : 'bg-danger'}`} />
+      {active ? activeLabel : inactiveLabel}
+    </span>
+  );
+}
+</file>
+
+<file path="client/src/context/AuthContext.jsx">
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import api from '../services/api';
+
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Called on app load, and after login/register, to sync our state with
+  // the real source of truth (the cookie-based session on the backend).
+  const refreshUser = useCallback(async () => {
+    try {
+      const { data } = await api.get('/users/me');
+      setUser(data.data);
+    } catch {
+      // 401 here just means "not logged in" — not an error worth
+      // surfacing, just means we render the logged-out state.
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // On first load: is there already a valid session cookie from a
+  // previous visit? We don't know until we ask the backend.
+  useEffect(() => {
+    refreshUser();
+  }, [refreshUser]);
+
+  async function login(email, password) {
+    const { data } = await api.post('/auth/login', { email, password });
+    await refreshUser();
+    return data;
+  }
+
+  async function register(email, password, name) {
+    const { data } = await api.post('/auth/register', { email, password, name });
+    if (!data.data?.requiresEmailConfirmation) {
+      await refreshUser();
+    }
+    return data;
+  }
+
+  async function logout() {
+    await api.post('/auth/logout');
+    setUser(null);
+  }
+
+  const value = {
+    user,
+    isAuthenticated: !!user,
+    loading,
+    login,
+    register,
+    logout,
+    refreshUser,
+  };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+}
+
+export function useAuth() {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+}
+</file>
+
+<file path="client/src/pages/AdminUsers.jsx">
+import { useState, useEffect, useCallback } from 'react';
+import { Search, ShieldAlert, Loader2 } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import StatusBadge from '../components/StatusBadge';
+import { useAuth } from '../context/AuthContext';
+import { fetchUsers, updateUserRole, updateUserStatus } from '../services/adminApi';
+
+const ROLES = ['USER', 'ADMIN', 'MODERATOR'];
+const PAGE_SIZE = 20;
+
+export default function AdminUsers() {
+  const { user: currentUser } = useAuth();
+
+  const [users, setUsers] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  // Tracks which row has an action in flight, so we can disable just
+  // that row's controls instead of freezing the whole table.
+  const [pendingUserId, setPendingUserId] = useState(null);
+
+  const loadUsers = useCallback(async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const result = await fetchUsers({ page, limit: PAGE_SIZE, search });
+      setUsers(result.users);
+      setTotal(result.total);
+    } catch (err) {
+      setError(err.response?.data?.message || 'Failed to load users.');
+    } finally {
+      setLoading(false);
+    }
+  }, [page, search]);
+
+  useEffect(() => {
+    loadUsers();
+  }, [loadUsers]);
+
+  async function handleRoleChange(userId, newRole) {
+    setPendingUserId(userId);
+    try {
+      await updateUserRole(userId, newRole);
+      setUsers((prev) => prev.map((u) => (u.id === userId ? { ...u, role: newRole } : u)));
+    } catch (err) {
+      setError(err.response?.data?.message || 'Failed to update role.');
+    } finally {
+      setPendingUserId(null);
+    }
+  }
+
+  async function handleStatusToggle(userId, currentlyActive) {
+    setPendingUserId(userId);
+    try {
+      await updateUserStatus(userId, !currentlyActive);
+      setUsers((prev) =>
+        prev.map((u) => (u.id === userId ? { ...u, isActive: !currentlyActive } : u))
+      );
+    } catch (err) {
+      setError(err.response?.data?.message || 'Failed to update status.');
+    } finally {
+      setPendingUserId(null);
+    }
+  }
+
+  const totalPages = Math.max(Math.ceil(total / PAGE_SIZE), 1);
+
+  return (
+    <div className="min-h-screen bg-paper">
+      <Navbar />
+
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="font-display font-semibold text-2xl">Users</h1>
+            <p className="text-sm text-muted">{total} total</p>
+          </div>
+
+          <div className="relative">
+            <Search className="w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              placeholder="Search by name…"
+              value={search}
+              onChange={(e) => {
+                setPage(1);
+                setSearch(e.target.value);
+              }}
+              className="pl-9 pr-3 py-2 rounded-lg border border-border bg-surface text-sm
+                focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent w-56"
+            />
+          </div>
+        </div>
+
+        {error && (
+          <div className="mb-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+            <ShieldAlert className="w-4 h-4 flex-shrink-0" />
+            {error}
+          </div>
+        )}
+
+        <div className="bg-surface border border-border rounded-xl overflow-hidden">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border text-left text-xs uppercase tracking-wide text-muted">
+                <th className="px-4 py-3 font-medium">Name</th>
+                <th className="px-4 py-3 font-medium">Email</th>
+                <th className="px-4 py-3 font-medium">Role</th>
+                <th className="px-4 py-3 font-medium">Status</th>
+                <th className="px-4 py-3 font-medium">Joined</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loading ? (
+                <tr>
+                  <td colSpan={5} className="px-4 py-10 text-center text-muted">
+                    <Loader2 className="w-5 h-5 animate-spin inline" />
+                  </td>
+                </tr>
+              ) : users.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="px-4 py-10 text-center text-muted text-sm">
+                    No users found.
+                  </td>
+                </tr>
+              ) : (
+                users.map((u) => {
+                  const isSelf = u.id === currentUser?.id;
+                  const rowPending = pendingUserId === u.id;
+                  return (
+                    <tr key={u.id} className="border-b border-border last:border-0">
+                      <td className="px-4 py-3">
+                        {u.name || <span className="text-muted">—</span>}
+                        {isSelf && (
+                          <span className="ml-1.5 text-xs text-muted">(you)</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3 font-mono text-xs text-muted">{u.email}</td>
+                      <td className="px-4 py-3">
+                        <select
+                          value={u.role}
+                          disabled={isSelf || rowPending}
+                          onChange={(e) => handleRoleChange(u.id, e.target.value)}
+                          className="font-mono text-xs bg-paper border border-border rounded px-2 py-1
+                            disabled:opacity-50 disabled:cursor-not-allowed
+                            focus:outline-none focus:ring-2 focus:ring-accent"
+                        >
+                          {ROLES.map((r) => (
+                            <option key={r} value={r}>
+                              {r}
+                            </option>
+                          ))}
+                        </select>
+                      </td>
+                      <td className="px-4 py-3">
+                        <button
+                          disabled={isSelf || rowPending}
+                          onClick={() => handleStatusToggle(u.id, u.isActive)}
+                          className="disabled:opacity-50 disabled:cursor-not-allowed"
+                          title={isSelf ? "You can't disable your own account" : undefined}
+                        >
+                          <StatusBadge
+                            active={u.isActive}
+                            activeLabel="Active"
+                            inactiveLabel="Disabled"
+                          />
+                        </button>
+                      </td>
+                      <td className="px-4 py-3 font-mono text-xs text-muted">
+                        {new Date(u.createdAt).toLocaleDateString()}
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        {totalPages > 1 && (
+          <div className="flex items-center justify-between mt-4 text-sm">
+            <button
+              disabled={page <= 1}
+              onClick={() => setPage((p) => p - 1)}
+              className="text-muted hover:text-ink disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              ← Previous
+            </button>
+            <span className="text-muted font-mono text-xs">
+              Page {page} of {totalPages}
+            </span>
+            <button
+              disabled={page >= totalPages}
+              onClick={() => setPage((p) => p + 1)}
+              className="text-muted hover:text-ink disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Next →
+            </button>
+          </div>
+        )}
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/pages/ChangePassword.jsx">
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Loader2, Check, X, ShieldCheck } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import FormField from '../components/FormField';
+import { changePassword } from '../services/userApi';
+import { PASSWORD_RULES, isPasswordValid } from '../utils/passwordRules';
+
+export default function ChangePassword() {
+  const navigate = useNavigate();
+
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const passwordValid = isPasswordValid(newPassword);
+  const passwordsMatch = newPassword.length > 0 && newPassword === confirmPassword;
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError('');
+
+    if (!passwordValid) {
+      setError('Please meet all password requirements.');
+      return;
+    }
+    if (!passwordsMatch) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await changePassword(currentPassword, newPassword);
+      setSuccess(true);
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Failed to change password.');
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (success) {
+    return (
+      <div className="min-h-screen bg-paper">
+        <Navbar />
+        <main className="max-w-md mx-auto px-4 sm:px-6 py-10 text-center">
+          <ShieldCheck className="w-10 h-10 text-success mx-auto mb-4" strokeWidth={1.5} />
+          <h1 className="font-display font-semibold text-xl mb-2">Password changed</h1>
+          <p className="text-sm text-muted mb-6">
+            Your password has been updated. You've been kept signed in on this device — any
+            other active sessions have been signed out for security.
+          </p>
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+          >
+            Back to dashboard
+          </button>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-paper">
+      <Navbar />
+
+      <main className="max-w-md mx-auto px-4 sm:px-6 py-10">
+        <h1 className="font-display font-semibold text-2xl mb-1">Change password</h1>
+        <p className="text-sm text-muted mb-8">
+          You'll need to confirm your current password first.
+        </p>
+
+        <form onSubmit={handleSubmit} noValidate className="bg-surface border border-border rounded-xl p-6">
+          <FormField
+            label="Current password"
+            id="currentPassword"
+            type="password"
+            autoComplete="current-password"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+            required
+          />
+
+          <FormField
+            label="New password"
+            id="newPassword"
+            type="password"
+            autoComplete="new-password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            required
+          />
+
+          {newPassword.length > 0 && (
+            <ul className="mb-4 -mt-2 space-y-1">
+              {PASSWORD_RULES.map((rule) => {
+                const passed = rule.test(newPassword);
+                return (
+                  <li
+                    key={rule.label}
+                    className={`flex items-center gap-1.5 text-xs ${
+                      passed ? 'text-success' : 'text-muted'
+                    }`}
+                  >
+                    {passed ? (
+                      <Check className="w-3.5 h-3.5" strokeWidth={2.5} />
+                    ) : (
+                      <X className="w-3.5 h-3.5" strokeWidth={2.5} />
+                    )}
+                    {rule.label}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          <FormField
+            label="Confirm new password"
+            id="confirmPassword"
+            type="password"
+            autoComplete="new-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            error={
+              confirmPassword.length > 0 && !passwordsMatch ? 'Passwords do not match' : undefined
+            }
+            required
+          />
+
+          {error && (
+            <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
+              disabled:opacity-60 disabled:cursor-not-allowed
+              text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+          >
+            {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+            {submitting ? 'Updating…' : 'Update password'}
+          </button>
+        </form>
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/pages/Dashboard.jsx">
+import { User, Shield, Calendar } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import StatusBadge from '../components/StatusBadge';
+import { useAuth } from '../context/AuthContext';
+
+function formatDate(iso) {
+  if (!iso) return '—';
+  return new Date(iso).toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+export default function Dashboard() {
+  const { user } = useAuth();
+
+  return (
+    <div className="min-h-screen bg-paper">
+      <Navbar />
+
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+        <h1 className="font-display font-semibold text-2xl mb-1">
+          Welcome back{user?.name ? `, ${user.name}` : ''}
+        </h1>
+        <p className="text-muted text-sm mb-8">Here's where things stand with your account.</p>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-8">
+          <div className="bg-surface border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 text-muted text-xs uppercase tracking-wide mb-3">
+              <Shield className="w-3.5 h-3.5" />
+              Account status
+            </div>
+            <StatusBadge active={user?.isActive} activeLabel="Active" inactiveLabel="Disabled" />
+          </div>
+
+          <div className="bg-surface border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 text-muted text-xs uppercase tracking-wide mb-3">
+              <User className="w-3.5 h-3.5" />
+              Role
+            </div>
+            <span className="font-mono text-sm bg-paper border border-border rounded px-2 py-0.5">
+              {user?.role}
+            </span>
+          </div>
+        </div>
+
+        <div className="bg-surface border border-border rounded-xl p-5">
+          <h2 className="font-display font-semibold text-sm mb-4">Profile</h2>
+          <dl className="space-y-3 text-sm">
+            <div className="flex justify-between border-b border-border pb-3">
+              <dt className="text-muted">Name</dt>
+              <dd>{user?.name || '—'}</dd>
+            </div>
+            <div className="flex justify-between border-b border-border pb-3">
+              <dt className="text-muted">Email</dt>
+              <dd className="font-mono text-xs">{user?.email}</dd>
+            </div>
+            <div className="flex justify-between border-b border-border pb-3">
+              <dt className="text-muted">User ID</dt>
+              <dd className="font-mono text-xs text-muted">{user?.id}</dd>
+            </div>
+            <div className="flex justify-between">
+              <dt className="text-muted flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5" />
+                Member since
+              </dt>
+              <dd className="font-mono text-xs">{formatDate(user?.createdAt)}</dd>
+            </div>
+          </dl>
+        </div>
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/pages/ForgotPassword.jsx">
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Loader2, MailCheck } from 'lucide-react';
+import AuthLayout from '../components/AuthLayout';
+import FormField from '../components/FormField';
+import api from '../services/api';
+
+export default function ForgotPassword() {
+  const [email, setEmail] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await api.post('/auth/forgot-password', { email });
+    } finally {
+      // The endpoint always returns success regardless of outcome
+      // (account-enumeration protection) — so there's no meaningful
+      // error state to show here, by design.
+      setSubmitting(false);
+      setSent(true);
+    }
+  }
+
+  if (sent) {
+    return (
+      <AuthLayout title="Check your email">
+        <div className="text-center py-2">
+          <MailCheck className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
+          <p className="text-sm text-muted mb-6">
+            If an account exists for <span className="text-ink font-medium">{email}</span>,
+            we've sent a link to reset your password.
+          </p>
+          <Link to="/login" className="text-accent text-sm font-medium hover:underline">
+            Back to login
+          </Link>
+        </div>
+      </AuthLayout>
+    );
+  }
+
+  return (
+    <AuthLayout
+      title="Forgot password"
+      subtitle="Enter your email and we'll send you a reset link."
+    >
+      <form onSubmit={handleSubmit} noValidate>
+        <FormField
+          label="Email"
+          id="email"
+          type="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
+            disabled:opacity-60 disabled:cursor-not-allowed
+            text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+        >
+          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+          {submitting ? 'Sending…' : 'Send reset link'}
+        </button>
+      </form>
+
+      <p className="mt-6 text-sm text-muted text-center">
+        Remembered it?{' '}
+        <Link to="/login" className="text-accent font-medium hover:underline">
+          Log in
+        </Link>
+      </p>
+    </AuthLayout>
+  );
+}
+</file>
+
+<file path="client/src/pages/Landing.jsx">
+import { Link } from 'react-router-dom';
+import { ShieldCheck, Lock, KeyRound, ScrollText } from 'lucide-react';
+
+const FEATURES = [
+  {
+    icon: Lock,
+    title: 'Secure by default',
+    body: 'Passwords never touch our servers in plain text. Sessions live in HTTP-only cookies, invisible to any script.',
+  },
+  {
+    icon: KeyRound,
+    title: 'Role-based access',
+    body: 'Every request is checked twice — once for who you are, once for what you\'re allowed to do.',
+  },
+  {
+    icon: ScrollText,
+    title: 'Full audit trail',
+    body: 'Every login, password change, and role update is logged — visible to admins, tamper-evident by design.',
+  },
+];
+
+export default function Landing() {
+  return (
+    <div className="min-h-screen bg-paper">
+      <header className="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <ShieldCheck className="w-5 h-5 text-accent" strokeWidth={2} />
+          <span className="font-display font-semibold text-sm tracking-tight">SecureAuth</span>
+        </div>
+        <Link
+          to="/login"
+          className="text-sm font-medium text-ink hover:text-accent transition-colors"
+        >
+          Log in
+        </Link>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-20">
+        <h1 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight max-w-xl mb-4">
+          Authentication, built like it matters.
+        </h1>
+        <p className="text-muted text-base max-w-md mb-8">
+          A reference implementation of secure login, role-based access, and audit logging —
+          built to be read, not just run.
+        </p>
+        <div className="flex gap-3">
+          <Link
+            to="/register"
+            className="bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+          >
+            Create an account
+          </Link>
+          <Link
+            to="/login"
+            className="border border-border text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-surface transition-colors"
+          >
+            Log in
+          </Link>
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-4 mt-20">
+          {FEATURES.map(({ icon: Icon, title, body }) => (
+            <div key={title} className="bg-surface border border-border rounded-xl p-5">
+              <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
+              <h3 className="font-display font-semibold text-sm mb-1.5">{title}</h3>
+              <p className="text-sm text-muted leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/pages/Login.jsx">
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Loader2, MailCheck } from 'lucide-react';
+import AuthLayout from '../components/AuthLayout';
+import FormField from '../components/FormField';
+import { useAuth } from '../context/AuthContext';
+import api from '../services/api';
+
+export default function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [errorCode, setErrorCode] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [resendState, setResendState] = useState('idle'); // idle | sending | sent
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError('');
+    setErrorCode('');
+    setResendState('idle');
+    setSubmitting(true);
+
+    try {
+      await login(email, password);
+      navigate('/dashboard');
+    } catch (err) {
+      // Backend deliberately returns a generic message for bad
+      // credentials (account enumeration protection) — we just surface
+      // whatever it sent rather than inventing our own wording.
+      setError(err.response?.data?.message || 'Something went wrong. Please try again.');
+      setErrorCode(err.response?.data?.code || '');
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function handleResend() {
+    setResendState('sending');
+    try {
+      await api.post('/auth/resend-verification', { email });
+      setResendState('sent');
+    } catch {
+      // Resend endpoint always returns success regardless of outcome
+      // (enumeration protection) — a network-level failure here is the
+      // only realistic error path, so just let them try again.
+      setResendState('idle');
+    }
+  }
+
+  return (
+    <AuthLayout title="Log in" subtitle="Welcome back. Enter your details to continue.">
+      <form onSubmit={handleSubmit} noValidate>
+        <FormField
+          label="Email"
+          id="email"
+          type="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <FormField
+          label="Password"
+          id="password"
+          type="password"
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        <div className="-mt-2 mb-4 text-right">
+          <Link to="/forgot-password" className="text-xs text-accent hover:underline">
+            Forgot password?
+          </Link>
+        </div>
+
+        {error && (
+          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+            <p>{error}</p>
+
+            {errorCode === 'EMAIL_NOT_CONFIRMED' && (
+              <div className="mt-2 pt-2 border-t border-danger/20">
+                {resendState === 'sent' ? (
+                  <p className="flex items-center gap-1.5 text-success text-xs font-medium">
+                    <MailCheck className="w-3.5 h-3.5" />
+                    Confirmation email sent — check your inbox.
+                  </p>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={handleResend}
+                    disabled={resendState === 'sending'}
+                    className="text-xs font-medium text-danger underline hover:no-underline disabled:opacity-60"
+                  >
+                    {resendState === 'sending' ? 'Sending…' : 'Resend confirmation email'}
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
+            disabled:opacity-60 disabled:cursor-not-allowed
+            text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+        >
+          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+          {submitting ? 'Logging in…' : 'Log in'}
+        </button>
+      </form>
+
+      <p className="mt-6 text-sm text-muted text-center">
+        Don't have an account?{' '}
+        <Link to="/register" className="text-accent font-medium hover:underline">
+          Sign up
+        </Link>
+      </p>
+    </AuthLayout>
+  );
+}
+</file>
+
+<file path="client/src/pages/NotFound.jsx">
+import { Link } from 'react-router-dom';
+
+export default function NotFound() {
+  return (
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-4 text-center">
+      <p className="font-mono text-xs text-muted mb-2">ERROR 404</p>
+      <h1 className="font-display font-semibold text-2xl mb-2">Page not found</h1>
+      <p className="text-muted text-sm mb-6">The page you're looking for doesn't exist.</p>
+      <Link to="/" className="text-accent text-sm font-medium hover:underline">
+        Back to home
+      </Link>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/pages/Profile.jsx">
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Loader2, Check, KeyRound } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import FormField from '../components/FormField';
+import { useAuth } from '../context/AuthContext';
+import { updateProfile } from '../services/userApi';
+
+export default function Profile() {
+  const { user, refreshUser } = useAuth();
+  const [name, setName] = useState(user?.name || '');
+  const [error, setError] = useState('');
+  const [saved, setSaved] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const unchanged = name.trim() === (user?.name || '');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError('');
+    setSaved(false);
+
+    if (name.trim().length === 0) {
+      setError('Name cannot be empty.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await updateProfile({ name: name.trim() });
+      await refreshUser();
+      setSaved(true);
+    } catch (err) {
+      setError(err.response?.data?.message || 'Failed to update profile.');
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-paper">
+      <Navbar />
+
+      <main className="max-w-lg mx-auto px-4 sm:px-6 py-10">
+        <h1 className="font-display font-semibold text-2xl mb-1">Profile</h1>
+        <p className="text-sm text-muted mb-8">Manage your account details.</p>
+
+        <div className="bg-surface border border-border rounded-xl p-6 mb-4">
+          <h2 className="font-display font-semibold text-sm mb-4">Basic info</h2>
+          <form onSubmit={handleSubmit} noValidate>
+            <FormField
+              label="Full name"
+              id="name"
+              type="text"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                setSaved(false);
+              }}
+            />
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-ink mb-1.5">Email</label>
+              <p className="text-sm font-mono text-muted px-3 py-2 bg-paper border border-border rounded-lg">
+                {user?.email}
+              </p>
+              <p className="mt-1 text-xs text-muted">Email address can't be changed here.</p>
+            </div>
+
+            {error && (
+              <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+                {error}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={submitting || unchanged}
+              className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
+                disabled:opacity-50 disabled:cursor-not-allowed
+                text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+              {saved && !submitting && <Check className="w-4 h-4" />}
+              {submitting ? 'Saving…' : saved ? 'Saved' : 'Save changes'}
+            </button>
+          </form>
+        </div>
+
+        <Link
+          to="/change-password"
+          className="flex items-center gap-3 bg-surface border border-border rounded-xl p-4
+            hover:border-accent transition-colors text-sm"
+        >
+          <KeyRound className="w-4 h-4 text-accent" />
+          <span className="font-medium">Change password</span>
+        </Link>
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="client/src/pages/Register.jsx">
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Loader2, Check, X, MailCheck } from 'lucide-react';
+import AuthLayout from '../components/AuthLayout';
+import FormField from '../components/FormField';
+import { useAuth } from '../context/AuthContext';
+import { PASSWORD_RULES, isPasswordValid } from '../utils/passwordRules';
+
+export default function Register() {
+  const { register } = useAuth();
+  const navigate = useNavigate();
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [needsConfirmation, setNeedsConfirmation] = useState(false);
+
+  const passwordValid = isPasswordValid(password);
+  const passwordsMatch = password.length > 0 && password === confirmPassword;
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError('');
+
+    if (!passwordValid) {
+      setError('Please meet all password requirements.');
+      return;
+    }
+    if (!passwordsMatch) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const result = await register(email, password, name);
+      if (result.data?.requiresEmailConfirmation) {
+        setNeedsConfirmation(true);
+      } else {
+        navigate('/dashboard');
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (needsConfirmation) {
+    return (
+      <AuthLayout title="Check your email">
+        <div className="text-center py-2">
+          <MailCheck className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
+          <p className="text-sm text-muted mb-6">
+            We've sent a confirmation link to <span className="text-ink font-medium">{email}</span>.
+            Click it, then come back and log in.
+          </p>
+          <Link
+            to="/login"
+            className="inline-block bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+          >
+            Go to login
+          </Link>
+        </div>
+      </AuthLayout>
+    );
+  }
+
+  return (
+    <AuthLayout title="Create an account" subtitle="Start by telling us a bit about you.">
+      <form onSubmit={handleSubmit} noValidate>
+        <FormField
+          label="Full name"
+          id="name"
+          type="text"
+          autoComplete="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <FormField
+          label="Email"
+          id="email"
+          type="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <FormField
+          label="Password"
+          id="password"
+          type="password"
+          autoComplete="new-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        {password.length > 0 && (
+          <ul className="mb-4 -mt-2 space-y-1">
+            {PASSWORD_RULES.map((rule) => {
+              const passed = rule.test(password);
+              return (
+                <li
+                  key={rule.label}
+                  className={`flex items-center gap-1.5 text-xs ${
+                    passed ? 'text-success' : 'text-muted'
+                  }`}
+                >
+                  {passed ? (
+                    <Check className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  ) : (
+                    <X className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  )}
+                  {rule.label}
+                </li>
+              );
+            })}
+          </ul>
+        )}
+
+        <FormField
+          label="Confirm password"
+          id="confirmPassword"
+          type="password"
+          autoComplete="new-password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          error={
+            confirmPassword.length > 0 && !passwordsMatch ? 'Passwords do not match' : undefined
+          }
+          required
+        />
+
+        {error && (
+          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+            {error}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
+            disabled:opacity-60 disabled:cursor-not-allowed
+            text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+        >
+          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+          {submitting ? 'Creating account…' : 'Create account'}
+        </button>
+      </form>
+
+      <p className="mt-6 text-sm text-muted text-center">
+        Already have an account?{' '}
+        <Link to="/login" className="text-accent font-medium hover:underline">
+          Log in
+        </Link>
+      </p>
+    </AuthLayout>
+  );
+}
+</file>
+
+<file path="client/src/pages/ResetPassword.jsx">
+import { useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Loader2, Check, X, ShieldCheck, ShieldAlert } from 'lucide-react';
+import AuthLayout from '../components/AuthLayout';
+import FormField from '../components/FormField';
+import api from '../services/api';
+import { PASSWORD_RULES, isPasswordValid } from '../utils/passwordRules';
+
+export default function ResetPassword() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const tokenHash = searchParams.get('token_hash');
+
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const passwordValid = isPasswordValid(newPassword);
+  const passwordsMatch = newPassword.length > 0 && newPassword === confirmPassword;
+
+  // No token at all in the URL — this page was reached directly, not via
+  // a real email link. Nothing to do here but point them to request one.
+  if (!tokenHash) {
+    return (
+      <AuthLayout title="Invalid link">
+        <div className="text-center py-2">
+          <ShieldAlert className="w-10 h-10 text-danger mx-auto mb-4" strokeWidth={1.5} />
+          <p className="text-sm text-muted mb-6">
+            This password reset link is missing or malformed. Please request a new one.
+          </p>
+          <Link
+            to="/forgot-password"
+            className="inline-block bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+          >
+            Request a new link
+          </Link>
+        </div>
+      </AuthLayout>
+    );
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError('');
+
+    if (!passwordValid) {
+      setError('Please meet all password requirements.');
+      return;
+    }
+    if (!passwordsMatch) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await api.post('/auth/reset-password', { tokenHash, newPassword });
+      setSuccess(true);
+    } catch (err) {
+      setError(err.response?.data?.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (success) {
+    return (
+      <AuthLayout title="Password reset">
+        <div className="text-center py-2">
+          <ShieldCheck className="w-10 h-10 text-success mx-auto mb-4" strokeWidth={1.5} />
+          <p className="text-sm text-muted mb-6">
+            Your password has been updated. Any other active sessions have been signed out —
+            please log in again with your new password.
+          </p>
+          <button
+            onClick={() => navigate('/login')}
+            className="bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+          >
+            Go to login
+          </button>
+        </div>
+      </AuthLayout>
+    );
+  }
+
+  return (
+    <AuthLayout title="Set a new password" subtitle="Choose something you haven't used before.">
+      <form onSubmit={handleSubmit} noValidate>
+        <FormField
+          label="New password"
+          id="newPassword"
+          type="password"
+          autoComplete="new-password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+          required
+        />
+
+        {newPassword.length > 0 && (
+          <ul className="mb-4 -mt-2 space-y-1">
+            {PASSWORD_RULES.map((rule) => {
+              const passed = rule.test(newPassword);
+              return (
+                <li
+                  key={rule.label}
+                  className={`flex items-center gap-1.5 text-xs ${
+                    passed ? 'text-success' : 'text-muted'
+                  }`}
+                >
+                  {passed ? (
+                    <Check className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  ) : (
+                    <X className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  )}
+                  {rule.label}
+                </li>
+              );
+            })}
+          </ul>
+        )}
+
+        <FormField
+          label="Confirm new password"
+          id="confirmPassword"
+          type="password"
+          autoComplete="new-password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          error={
+            confirmPassword.length > 0 && !passwordsMatch ? 'Passwords do not match' : undefined
+          }
+          required
+        />
+
+        {error && (
+          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+            {error}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
+            disabled:opacity-60 disabled:cursor-not-allowed
+            text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+        >
+          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+          {submitting ? 'Resetting…' : 'Reset password'}
+        </button>
+      </form>
+    </AuthLayout>
+  );
+}
+</file>
+
+<file path="client/src/services/adminApi.js">
+import api from './api';
+
+export async function fetchUsers({ page = 1, limit = 20, search = '' } = {}) {
+  const { data } = await api.get('/admin/users', { params: { page, limit, search } });
+  return data.data;
+}
+
+export async function updateUserRole(userId, role) {
+  const { data } = await api.patch(`/admin/users/${userId}/role`, { role });
+  return data.data;
+}
+
+export async function updateUserStatus(userId, isActive) {
+  const { data } = await api.patch(`/admin/users/${userId}/status`, { isActive });
+  return data.data;
+}
+</file>
+
+<file path="client/src/services/api.js">
+import axios from 'axios';
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  // The single most important line in this file: without this, the
+  // browser will NOT send our HttpOnly cookies on cross-origin requests
+  // (localhost:5173 -> localhost:5000 counts as cross-origin), and every
+  // authenticated request would silently look like a logged-out user.
+  withCredentials: true,
+});
+
+// If a request fails with 401 because the access token expired (not
+// because credentials were simply missing), try refreshing once and
+// replay the original request. This is what makes the 1-hour token
+// expiry invisible to the user during normal use.
+let isRefreshing = false;
+let pendingRequests = [];
+
+function resolvePending(error) {
+  pendingRequests.forEach(({ resolve, reject }) => (error ? reject(error) : resolve()));
+  pendingRequests = [];
+}
+
+api.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config;
+    const status = error.response?.status;
+    const code = error.response?.data?.code;
+
+    // Don't try to refresh on the refresh endpoint itself, or if we've
+    // already retried this request once (avoids infinite loops).
+    const isAuthEndpoint = originalRequest.url?.includes('/auth/');
+    if (status !== 401 || code !== 'INVALID_TOKEN' || originalRequest._retried || isAuthEndpoint) {
+      return Promise.reject(error);
+    }
+
+    if (isRefreshing) {
+      // A refresh is already in flight (e.g. two requests failed at once)
+      // — queue this one instead of firing a second refresh call.
+      return new Promise((resolve, reject) => {
+        pendingRequests.push({ resolve, reject });
+      }).then(() => api(originalRequest));
+    }
+
+    originalRequest._retried = true;
+    isRefreshing = true;
+
+    try {
+      await api.post('/auth/refresh');
+      resolvePending(null);
+      return api(originalRequest);
+    } catch (refreshError) {
+      resolvePending(refreshError);
+      return Promise.reject(refreshError);
+    } finally {
+      isRefreshing = false;
+    }
+  }
+);
+
+export default api;
+</file>
+
+<file path="client/src/services/userApi.js">
+import api from './api';
+
+export async function updateProfile(updates) {
+  const { data } = await api.patch('/users/me', updates);
+  return data.data;
+}
+
+export async function changePassword(currentPassword, newPassword) {
+  const { data } = await api.patch('/users/me/password', { currentPassword, newPassword });
+  return data;
+}
+</file>
+
+<file path="client/src/utils/passwordRules.js">
+// Mirrors server/src/validators/passwordValidator.js exactly. If you
+// change the rules on the backend, update this too — the frontend check
+// is UX only, the backend is what actually enforces it.
+export const PASSWORD_RULES = [
+  { label: 'At least 8 characters', test: (pw) => pw.length >= 8 },
+  { label: 'One uppercase letter', test: (pw) => /[A-Z]/.test(pw) },
+  { label: 'One number', test: (pw) => /[0-9]/.test(pw) },
+];
+
+export function isPasswordValid(password) {
+  return PASSWORD_RULES.every((rule) => rule.test(password));
+}
+</file>
+
+<file path="client/src/App.jsx">
+import { Routes, Route } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
+import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
+import ChangePassword from './pages/ChangePassword';
+import AdminUsers from './pages/AdminUsers';
+import NotFound from './pages/NotFound';
+import { ProtectedRoute, AdminRoute } from './components/RouteGuards';
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/change-password"
+        element={
+          <ProtectedRoute>
+            <ChangePassword />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/users"
+        element={
+          <AdminRoute>
+            <AdminUsers />
+          </AdminRoute>
+        }
+      />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+</file>
+
+<file path="client/src/index.css">
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14171f;
+  --color-paper: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-accent: #4338ca;
+  --color-accent-hover: #3730a3;
+  --color-muted: #6b7280;
+  --color-border: #e5e5e2;
+  --color-success: #15803d;
+  --color-success-bg: #f0fdf4;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fef2f2;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</file>
+
+<file path="client/src/main.jsx">
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+import './index.css'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
+  </StrictMode>,
+)
+</file>
+
+<file path="client/.env.example">
+VITE_API_URL=http://localhost:5000/api
+</file>
+
+<file path="client/.gitignore">
+node_modules
+dist
+.env
+</file>
+
+<file path="client/.oxlintrc.json">
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "oxc"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+</file>
+
+<file path="client/index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureAuth</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="client/package.json">
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.19.0",
+    "lucide-react": "^1.31.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.0"
+  }
+}
+</file>
+
+<file path="client/README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+</file>
+
+<file path="client/vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  server: {
+    port: 5173,
+  },
+})
+</file>
+
+<file path="server/local-dev-only/000_mock_auth_schema.sql">
+-- ============================================================================
+-- LOCAL TESTING ONLY — DO NOT RUN THIS AGAINST YOUR REAL SUPABASE PROJECT.
+--
+-- Supabase creates and owns the real auth.users table automatically. This
+-- file exists only so we can test 001_create_profiles.sql's trigger logic
+-- against a local Postgres instance that doesn't have Supabase installed.
+-- It's a deliberately trimmed-down stand-in with just the columns our
+-- trigger touches (id, raw_user_meta_data).
+-- ============================================================================
+
+CREATE SCHEMA IF NOT EXISTS auth;
+
+CREATE TABLE auth.users (
+    id                 UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email              TEXT UNIQUE,
+    raw_user_meta_data JSONB,
+    created_at         TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Supabase provides auth.uid() for free, reading the caller's id out of
+-- their verified JWT. Vanilla Postgres has no such function, so our RLS
+-- policy (which calls auth.uid()) can't even be created without a stand-in.
+-- For local testing we fake it with a session variable we can set manually.
+CREATE OR REPLACE FUNCTION auth.uid() RETURNS UUID AS $$
+    SELECT NULLIF(current_setting('test.current_user_id', true), '')::UUID;
+$$ LANGUAGE sql STABLE;
+</file>
+
+<file path="server/migrations/001_create_profiles.sql">
+-- This migration assumes auth.users already exists — Supabase creates and
+-- manages that table for you. We only ever add to the public schema.
+
+CREATE TYPE user_role AS ENUM ('USER', 'ADMIN', 'MODERATOR');
+
+CREATE TABLE public.profiles (
+    -- Same id as the auth.users row it extends — a true 1:1 extension,
+    -- not a separate identity. Deleting the auth user deletes the profile.
+    id          UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+    name        TEXT NOT NULL DEFAULT '',
+    role        user_role NOT NULL DEFAULT 'USER',
+    is_active   BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE OR REPLACE FUNCTION public.set_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = now();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER profiles_set_updated_at
+    BEFORE UPDATE ON public.profiles
+    FOR EACH ROW
+    EXECUTE FUNCTION public.set_updated_at();
+
+-- The sync trigger: fires the instant Supabase inserts a new auth.users row
+-- (i.e. right after someone signs up), and creates the matching profile.
+-- SECURITY DEFINER: runs with the privileges of the function owner, not the
+-- caller — required because Supabase's own internal signup process is what
+-- triggers this, and it doesn't have direct INSERT rights on public.profiles.
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO public.profiles (id, name)
+    VALUES (NEW.id, COALESCE(NEW.raw_user_meta_data->>'name', ''));
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
+
+CREATE TRIGGER on_auth_user_created
+    AFTER INSERT ON auth.users
+    FOR EACH ROW
+    EXECUTE FUNCTION public.handle_new_user();
+
+-- Row Level Security: profiles can be read directly by the owning user via
+-- Supabase's client SDK (using the user's own JWT), but writes to role and
+-- is_active only ever happen through our backend using the service role
+-- key, which bypasses RLS entirely. So we add a SELECT policy for the
+-- owner and deliberately add no INSERT/UPDATE/DELETE policy — those stay
+-- backend-only until we explicitly decide otherwise.
+ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view their own profile"
+    ON public.profiles FOR SELECT
+    USING (auth.uid() = id);
+</file>
+
+<file path="server/migrations/002_create_login_attempts.sql">
+CREATE TABLE public.login_attempts (
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id     UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+    email       TEXT NOT NULL,
+    ip_address  TEXT NOT NULL,
+    user_agent  TEXT,
+    success     BOOLEAN NOT NULL,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX login_attempts_email_created_idx ON public.login_attempts (email, created_at DESC);
+CREATE INDEX login_attempts_ip_created_idx ON public.login_attempts (ip_address, created_at DESC);
+
+-- No SELECT policy for regular users — this table is for admin eyes only,
+-- read exclusively through our backend's service role key, which bypasses
+-- RLS. Enabling RLS with zero policies means even a logged-in user querying
+-- this table directly via the Supabase client gets nothing back.
+ALTER TABLE public.login_attempts ENABLE ROW LEVEL SECURITY;
+</file>
+
+<file path="server/migrations/003_create_audit_logs.sql">
+CREATE TYPE audit_action AS ENUM (
+    'LOGIN_SUCCESS',
+    'LOGIN_FAILED',
+    'LOGOUT',
+    'PASSWORD_CHANGED',
+    'PASSWORD_RESET_REQUESTED',
+    'PASSWORD_RESET_COMPLETED',
+    'EMAIL_VERIFIED',
+    'ROLE_CHANGED',
+    'ACCOUNT_DISABLED',
+    'ACCOUNT_ENABLED'
+);
+
+CREATE TABLE public.audit_logs (
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id     UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+    action      audit_action NOT NULL,
+    metadata    JSONB,
+    ip_address  TEXT,
+    user_agent  TEXT,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX audit_logs_user_id_idx ON public.audit_logs (user_id);
+CREATE INDEX audit_logs_action_created_idx ON public.audit_logs (action, created_at DESC);
+
+-- Same reasoning as login_attempts: admin-only, backend-only access.
+ALTER TABLE public.audit_logs ENABLE ROW LEVEL SECURITY;
+</file>
+
+<file path="server/src/config/env.js">
+require('dotenv').config();
+
+// Fail fast, fail loud: if a required variable is missing, we want the
+// server to refuse to start with a clear message — not start "successfully"
+// and then throw a confusing error the first time something touches
+// Supabase three requests later.
+const REQUIRED_VARS = [
+  'DATABASE_URL',
+  'SUPABASE_URL',
+  'SUPABASE_ANON_KEY',
+  'SUPABASE_SERVICE_ROLE_KEY',
+  'FRONTEND_URL',
+];
+
+const missing = REQUIRED_VARS.filter((key) => !process.env[key]);
+
+if (missing.length > 0) {
+  throw new Error(
+    `Missing required environment variable(s): ${missing.join(', ')}. Check your .env file against .env.example.`
+  );
+}
+
+module.exports = {
+  nodeEnv: process.env.NODE_ENV || 'development',
+  port: process.env.PORT || 4000,
+  databaseUrl: process.env.DATABASE_URL,
+  supabaseUrl: process.env.SUPABASE_URL,
+  supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+  supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+  frontendUrl: process.env.FRONTEND_URL,
+};
+</file>
+
+<file path="server/src/config/supabaseClients.js">
+const { createClient } = require('@supabase/supabase-js');
+const env = require('./env');
+
+// Used ONLY to verify incoming user JWTs (getClaims). Uses the anon key —
+// deliberately the least-privileged key we have, since this client never
+// touches data, only checks whether a token is authentically signed by
+// Supabase and not expired.
+const supabaseAuth = createClient(env.supabaseUrl, env.supabaseAnonKey, {
+  auth: { persistSession: false },
+});
+
+// Used for backend-privileged reads/writes — bypasses Row Level Security
+// entirely via the service role key. This is what lets us look up ANY
+// user's profile (not just "your own row", which is all RLS would allow),
+// which our own authenticateUser middleware and future admin endpoints
+// both need. NEVER expose this client or its key to the frontend.
+const supabaseAdmin = createClient(env.supabaseUrl, env.supabaseServiceRoleKey, {
+  auth: { persistSession: false },
+});
+
+module.exports = { supabaseAuth, supabaseAdmin };
+</file>
+
+<file path="server/src/controllers/adminController.js">
+const adminService = require('../services/adminService');
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function parsePagination(query) {
+  const page = Math.max(parseInt(query.page, 10) || 1, 1);
+  const limit = Math.min(Math.max(parseInt(query.limit, 10) || 20, 1), 100);
+  return { page, limit };
+}
+
+exports.listUsers = async (req, res, next) => {
+  try {
+    const { page, limit } = parsePagination(req.query);
+    const search = (req.query.search || '').trim();
+    const result = await adminService.listUsers({ page, limit, search });
+    res.json({ success: true, data: result });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getUserById = async (req, res, next) => {
+  try {
+    if (!UUID_RE.test(req.params.id)) {
+      return res.status(400).json({ success: false, message: 'Invalid user ID', code: 'INVALID_ID' });
+    }
+    const user = await adminService.getUserById(req.params.id);
+    res.json({ success: true, data: user });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.updateUserRole = async (req, res, next) => {
+  try {
+    if (!UUID_RE.test(req.params.id)) {
+      return res.status(400).json({ success: false, message: 'Invalid user ID', code: 'INVALID_ID' });
+    }
+    const { role } = req.body;
+    if (!role) {
+      return res.status(400).json({ success: false, message: 'Role is required' });
+    }
+
+    const result = await adminService.updateUserRole({
+      targetUserId: req.params.id,
+      newRole: role,
+      actingAdminId: req.user.id,
+    });
+
+    res.json({ success: true, data: result });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.updateUserStatus = async (req, res, next) => {
+  try {
+    if (!UUID_RE.test(req.params.id)) {
+      return res.status(400).json({ success: false, message: 'Invalid user ID', code: 'INVALID_ID' });
+    }
+    const { isActive } = req.body;
+    if (typeof isActive !== 'boolean') {
+      return res.status(400).json({ success: false, message: 'isActive must be a boolean' });
+    }
+
+    const result = await adminService.updateUserStatus({
+      targetUserId: req.params.id,
+      isActive,
+      actingAdminId: req.user.id,
+    });
+
+    res.json({ success: true, data: result });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.listAuditLogs = async (req, res, next) => {
+  try {
+    const { page, limit } = parsePagination(req.query);
+    const result = await adminService.listAuditLogs({ page, limit });
+    res.json({ success: true, data: result });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.listLoginAttempts = async (req, res, next) => {
+  try {
+    const { page, limit } = parsePagination(req.query);
+    const result = await adminService.listLoginAttempts({ page, limit });
+    res.json({ success: true, data: result });
+  } catch (err) {
+    next(err);
+  }
+};
+</file>
+
+<file path="server/src/controllers/authController.js">
+const { supabaseAuth, supabaseAdmin } = require('../config/supabaseClients');
+const env = require('../config/env');
+const { validatePasswordStrength } = require('../validators/passwordValidator');
+
+const isProd = env.nodeEnv === 'production';
+
+// Helper to set secure auth cookies
+// Note: cookie-based auth introduces CSRF risk. Setting sameSite: 'strict' is our
+// primary mitigation for now. A dedicated CSRF token pattern should be added during
+// the security-hardening phase for any state-changing routes if sameSite alone proves insufficient.
+const setAuthCookies = (res, session) => {
+  const cookieOptions = {
+    httpOnly: true,
+    secure: isProd,
+    sameSite: 'strict',
+  };
+
+  res.cookie('access_token', session.access_token, {
+    ...cookieOptions,
+    maxAge: session.expires_in * 1000,
+  });
+
+  res.cookie('refresh_token', session.refresh_token, {
+    ...cookieOptions,
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+  });
+};
+
+const clearAuthCookies = (res) => {
+  const cookieOptions = {
+    httpOnly: true,
+    secure: isProd,
+    sameSite: 'strict',
+  };
+
+  res.clearCookie('access_token', cookieOptions);
+  res.clearCookie('refresh_token', cookieOptions);
+};
+
+// Writes to login_attempts for security monitoring / the admin dashboard.
+// Deliberately swallows its own errors — a logging failure should never
+// be the reason a real login request fails.
+async function recordLoginAttempt({ req, email, success, userId }) {
+  try {
+    await supabaseAdmin.from('login_attempts').insert({
+      user_id: userId,
+      email,
+      ip_address: req.ip,
+      user_agent: req.headers['user-agent'] || null,
+      success,
+    });
+  } catch (err) {
+    console.error('Failed to record login attempt:', err.message);
+  }
+}
+
+exports.register = async (req, res, next) => {
+  try {
+    const { email, password, name } = req.body;
+
+    if (!email || !password || !name) {
+      return res.status(400).json({ success: false, message: 'Email, password, and name are required' });
+    }
+
+    const strength = validatePasswordStrength(password);
+    if (!strength.valid) {
+      return res.status(400).json({ success: false, message: strength.message });
+    }
+
+    const { data, error } = await supabaseAuth.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { name },
+      },
+    });
+
+    if (error) {
+      return res.status(400).json({ success: false, message: error.message });
+    }
+
+    // If Supabase's "Confirm email" setting is ON, signUp succeeds but
+    // returns no session — the account exists, but can't log in yet until
+    // the confirmation link is clicked. Without this check, the frontend
+    // would silently treat this as a successful login and immediately
+    // hit a wall on the next request.
+    if (data.session) {
+      setAuthCookies(res, data.session);
+      return res.status(201).json({
+        success: true,
+        message: 'Registration successful',
+        data: { user: data.user, requiresEmailConfirmation: false },
+      });
+    }
+
+    res.status(201).json({
+      success: true,
+      message: 'Please check your email to confirm your account before logging in.',
+      data: { user: data.user, requiresEmailConfirmation: true },
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.login = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Email and password are required' });
+    }
+
+    const { data, error } = await supabaseAuth.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    // Fire-and-forget style, but we still await it so a logging failure
+    // can't outlive the request — errors here are caught and logged, never
+    // allowed to block the actual login response.
+    await recordLoginAttempt({
+      req,
+      email,
+      success: !error,
+      userId: data?.user?.id || null,
+    });
+
+    if (error) {
+      // Supabase's own message is safe to show for actual auth failures
+      // (e.g. "Invalid login credentials", "Email not confirmed") — these
+      // are deliberately generic enough to not enable enumeration. But a
+      // network/infra error (e.g. "fetch failed") is NOT something we
+      // want reaching the client, so we only pass through messages that
+      // look like real auth responses, and use a generic fallback otherwise.
+      const isAuthMessage = error.status && error.status < 500;
+
+      // Distinguish "email not confirmed" specifically so the frontend can
+      // offer a resend-confirmation action. Matched by code when available
+      // (more reliable across SDK versions), falling back to the message.
+      const isUnconfirmed =
+        error.code === 'email_not_confirmed' ||
+        error.message?.toLowerCase().includes('email not confirmed');
+
+      return res.status(401).json({
+        success: false,
+        message: isAuthMessage ? error.message : 'Login failed. Please try again.',
+        code: isUnconfirmed ? 'EMAIL_NOT_CONFIRMED' : undefined,
+      });
+    }
+
+    setAuthCookies(res, data.session);
+
+    res.json({
+      success: true,
+      message: 'Login successful',
+      data: { user: data.user },
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.logout = async (req, res, next) => {
+  try {
+    const accessToken = req.cookies.access_token;
+
+    // Clearing cookies alone doesn't revoke anything server-side — the
+    // refresh token would stay valid until its 30-day expiry even after
+    // "logout" if we stopped there. supabaseAdmin.auth.admin.signOut()
+    // is the actual revocation call: it invalidates the session on
+    // Supabase's side using our service-role client (this needs elevated
+    // privilege, which is why it's on supabaseAdmin, not supabaseAuth).
+    // scope: 'local' revokes only this session, not the user's other
+    // logged-in devices.
+    if (accessToken) {
+      const { error } = await supabaseAdmin.auth.admin.signOut(accessToken, 'local');
+      if (error) {
+        // Not fatal — token may already be expired/invalid, which is a
+        // fine outcome for a logout request. Log it, don't block the user.
+        console.error('logout: signOut revocation failed:', error.message);
+      }
+    }
+
+    clearAuthCookies(res);
+
+    res.json({ success: true, message: 'Logged out successfully' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.resendVerification = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({ success: false, message: 'Email is required' });
+    }
+
+    const { error } = await supabaseAuth.auth.resend({ type: 'signup', email });
+
+    // Deliberately generic response regardless of what actually happened —
+    // same account-enumeration protection as forgot-password. Whether the
+    // email doesn't exist, is already confirmed, or genuinely got a new
+    // link, the response looks identical to anyone watching the network
+    // tab. We log the real error server-side for our own debugging.
+    if (error) {
+      console.error('resendVerification:', error.message);
+    }
+
+    res.json({
+      success: true,
+      message: 'If that account exists and is unconfirmed, a new confirmation email has been sent.',
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+exports.refresh = async (req, res, next) => {
+  try {
+    const refreshToken = req.cookies.refresh_token;
+
+    if (!refreshToken) {
+      return res.status(401).json({ success: false, message: 'No refresh token provided' });
+    }
+
+    const { data, error } = await supabaseAuth.auth.refreshSession({
+      refresh_token: refreshToken,
+    });
+
+    if (error || !data.session) {
+      clearAuthCookies(res);
+      return res.status(401).json({ success: false, message: 'Invalid or expired refresh token' });
+    }
+
+    setAuthCookies(res, data.session);
+
+    res.json({ success: true, message: 'Session refreshed successfully' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.forgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({ success: false, message: 'Email is required' });
+    }
+
+    const { error } = await supabaseAuth.auth.resetPasswordForEmail(email, {
+      redirectTo: `${env.frontendUrl}/reset-password`,
+    });
+
+    // Supabase itself already avoids revealing whether the account exists
+    // for this call, and we match that here — same message regardless of
+    // outcome. Real errors (rate limits, infra issues) are logged for us,
+    // never surfaced to the client.
+    if (error) {
+      console.error('forgotPassword:', error.message);
+    }
+
+    res.json({
+      success: true,
+      message: 'If an account with that email exists, a password reset link has been sent.',
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.resetPassword = async (req, res, next) => {
+  try {
+    const { tokenHash, newPassword } = req.body;
+
+    if (!tokenHash || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Reset token and new password are required',
+      });
+    }
+
+    const strength = validatePasswordStrength(newPassword);
+    if (!strength.valid) {
+      return res.status(400).json({ success: false, message: strength.message });
+    }
+
+    // verifyOtp proves the requester actually clicked the link sent to
+    // that email address — this IS the identity check for this flow
+    // (there's no "current password" to verify, since the whole point is
+    // the user can't log in normally).
+    const { data, error } = await supabaseAuth.auth.verifyOtp({
+      token_hash: tokenHash,
+      type: 'recovery',
+    });
+
+    if (error || !data.user) {
+      return res.status(400).json({
+        success: false,
+        message: 'This reset link is invalid or has expired. Please request a new one.',
+        code: 'INVALID_RESET_TOKEN',
+      });
+    }
+
+    const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(data.user.id, {
+      password: newPassword,
+    });
+
+    if (updateError) {
+      const err = new Error('Failed to reset password');
+      err.status = 500;
+      throw err;
+    }
+
+    // Unlike Phase 7's change-password (which keeps the current session
+    // alive), a reset means the user COULDN'T log in normally — we can't
+    // assume the account isn't already compromised elsewhere, so every
+    // session gets revoked, including the one verifyOtp just created. The
+    // user logs in fresh with the new password; we don't auto-login here.
+    if (data.session?.access_token) {
+      const { error: signOutError } = await supabaseAdmin.auth.admin.signOut(
+        data.session.access_token,
+        'global'
+      );
+      if (signOutError) {
+        console.error('resetPassword: failed to revoke sessions:', signOutError.message);
+      }
+    }
+
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: data.user.id,
+      action: 'PASSWORD_RESET_COMPLETED',
+    });
+
+    res.json({ success: true, message: 'Password reset successfully. Please log in.' });
+  } catch (err) {
+    next(err);
+  }
+};
+</file>
+
+<file path="server/src/controllers/userController.js">
+const userService = require('../services/userService');
+const { supabaseAuth, supabaseAdmin } = require('../config/supabaseClients');
+const { validatePasswordStrength } = require('../validators/passwordValidator');
+
+async function getMe(req, res, next) {
+  try {
+    const profile = await userService.getProfileById(req.user.id);
+    res.json({
+      success: true,
+      data: {
+        id: profile.id,
+        name: profile.name,
+        email: req.user.email,
+        role: profile.role,
+        isActive: profile.is_active,
+        createdAt: profile.created_at,
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function updateMe(req, res, next) {
+  try {
+    const { name } = req.body;
+
+    if (name !== undefined && (typeof name !== 'string' || name.trim().length === 0)) {
+      return res.status(400).json({ success: false, message: 'Name cannot be empty' });
+    }
+
+    const profile = await userService.updateProfile(req.user.id, {
+      name: name?.trim(),
+    });
+
+    res.json({
+      success: true,
+      data: {
+        id: profile.id,
+        name: profile.name,
+        email: req.user.email,
+        role: profile.role,
+        isActive: profile.is_active,
+        createdAt: profile.created_at,
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function changePassword(req, res, next) {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Current and new password are required',
+      });
+    }
+
+    const strength = validatePasswordStrength(newPassword);
+    if (!strength.valid) {
+      return res.status(400).json({ success: false, message: strength.message });
+    }
+
+    // Verify current password with a real sign-in attempt — confirms the
+    // requester actually knows it, not just that they hold a (possibly
+    // stolen) valid session cookie. This uses the stateless anon client,
+    // so it doesn't touch this request's actual session cookies at all.
+    const { error: verifyError } = await supabaseAuth.auth.signInWithPassword({
+      email: req.user.email,
+      password: currentPassword,
+    });
+
+    if (verifyError) {
+      return res.status(401).json({
+        success: false,
+        message: 'Current password is incorrect',
+        code: 'INCORRECT_PASSWORD',
+      });
+    }
+
+    const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(req.user.id, {
+      password: newPassword,
+    });
+
+    if (updateError) {
+      const err = new Error('Failed to update password');
+      err.status = 500;
+      throw err;
+    }
+
+    // Revoke every OTHER session for this user, but keep the current
+    // request's session alive — someone with a stolen session shouldn't
+    // stay logged in after the real owner changes their password, but the
+    // person making the change shouldn't be logged out of their own
+    // device for doing so.
+    const currentAccessToken = req.cookies.access_token;
+    if (currentAccessToken) {
+      const { error: signOutError } = await supabaseAdmin.auth.admin.signOut(
+        currentAccessToken,
+        'others'
+      );
+      if (signOutError) {
+        console.error('changePassword: failed to revoke other sessions:', signOutError.message);
+      }
+    }
+
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: req.user.id,
+      action: 'PASSWORD_CHANGED',
+    });
+
+    res.json({ success: true, message: 'Password changed successfully' });
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { getMe, updateMe, changePassword };
+</file>
+
+<file path="server/src/db/migrate.js">
+require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
+const pool = require('./pool');
+
+const MIGRATIONS_DIR = path.join(__dirname, '..', '..', 'migrations');
+
+async function ensureMigrationsTable(client) {
+  // Tracks which migration files have already been applied, so re-running
+  // this script is always safe — only new files get executed.
+  await client.query(`
+    CREATE TABLE IF NOT EXISTS schema_migrations (
+      name        TEXT PRIMARY KEY,
+      applied_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+  `);
+}
+
+async function getAppliedMigrations(client) {
+  const result = await client.query('SELECT name FROM schema_migrations');
+  return new Set(result.rows.map((row) => row.name));
+}
+
+async function runMigrations() {
+  const client = await pool.connect();
+
+  try {
+    await ensureMigrationsTable(client);
+    const applied = await getAppliedMigrations(client);
+
+    const files = fs
+      .readdirSync(MIGRATIONS_DIR)
+      .filter((f) => f.endsWith('.sql'))
+      .sort(); // filenames are prefixed 001_, 002_... so alphabetical = execution order
+
+    const pending = files.filter((f) => !applied.has(f));
+
+    if (pending.length === 0) {
+      console.log('No pending migrations. Database is up to date.');
+      return;
+    }
+
+    for (const file of pending) {
+      const sql = fs.readFileSync(path.join(MIGRATIONS_DIR, file), 'utf8');
+      console.log(`Applying ${file}...`);
+
+      // Each migration runs in its own transaction: if a migration fails
+      // partway through, it rolls back completely rather than leaving the
+      // schema half-changed.
+      await client.query('BEGIN');
+      try {
+        await client.query(sql);
+        await client.query('INSERT INTO schema_migrations (name) VALUES ($1)', [file]);
+        await client.query('COMMIT');
+        console.log(`  done`);
+      } catch (err) {
+        await client.query('ROLLBACK');
+        throw new Error(`Migration ${file} failed: ${err.message}`);
+      }
+    }
+
+    console.log(`Applied ${pending.length} migration(s) successfully.`);
+  } finally {
+    client.release();
+    await pool.end();
+  }
+}
+
+runMigrations().catch((err) => {
+  console.error(err.message);
+  process.exit(1);
+});
+</file>
+
+<file path="server/src/db/pool.js">
+const { Pool } = require('pg');
+
+// A pool, not a single client: Express handles many requests concurrently,
+// and each in-flight query needs its own connection. The pool hands one out
+// per query and returns it to the pool when done, instead of one shared
+// connection that would serialize every request behind it.
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+module.exports = pool;
+</file>
+
+<file path="server/src/middleware/authenticateUser.js">
+const { supabaseAuth, supabaseAdmin } = require('../config/supabaseClients');
+
+async function authenticateUser(req, res, next) {
+  try {
+    // Cookie-based now, not Bearer header: our backend owns the session via
+    // HTTP-only cookies (set by authController on login/register/refresh),
+    // so JavaScript on the frontend never touches the token directly.
+    const token = req.cookies?.access_token;
+
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: 'Authentication required',
+        code: 'MISSING_TOKEN',
+      });
+    }
+
+    // getClaims verifies the token's signature and expiry. For newer
+    // Supabase projects this happens locally against a cached public key
+    // (no network call); for older HS256 projects, the SDK transparently
+    // falls back to a server-side check. Either way, we don't need to know
+    // which — we just trust the result.
+    const { data, error } = await supabaseAuth.auth.getClaims(token);
+
+    if (error || !data?.claims?.sub) {
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid or expired session',
+        code: 'INVALID_TOKEN',
+      });
+    }
+
+    const userId = data.claims.sub;
+
+    // The JWT alone doesn't reflect account status changes made after it was
+    // issued (e.g. an admin disabling the account minutes ago). We check our
+    // own source of truth on every request rather than trusting the token.
+    const { data: profile, error: profileError } = await supabaseAdmin
+      .from('profiles')
+      .select('id, name, role, is_active')
+      .eq('id', userId)
+      .single();
+
+    if (profileError || !profile) {
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid or expired session',
+        code: 'INVALID_TOKEN',
+      });
+    }
+
+    if (!profile.is_active) {
+      return res.status(403).json({
+        success: false,
+        message: 'This account has been disabled',
+        code: 'ACCOUNT_DISABLED',
+      });
+    }
+
+    // Deliberately minimal: only what downstream code actually needs.
+    // Never attach the raw token or full claims object here.
+    req.user = {
+      id: profile.id,
+      name: profile.name,
+      role: profile.role,
+      email: data.claims.email,
+    };
+
+    next();
+  } catch (err) {
+    // Belt-and-suspenders: nothing observed in testing actually throws
+    // here, but if a future SDK version or edge case ever does, this
+    // guarantees next(err) runs instead of the request hanging forever.
+    next(err);
+  }
+}
+
+// MUST run after authenticateUser — relies on req.user already being set.
+// Accepts either a single role string or an array, so both
+// requireRole('ADMIN') and requireRole(['ADMIN', 'MODERATOR']) work.
+function requireRole(allowedRoles) {
+  const roles = Array.isArray(allowedRoles) ? allowedRoles : [allowedRoles];
+
+  return (req, res, next) => {
+    if (!req.user) {
+      // Programmer error if this fires — means requireRole was used
+      // without authenticateUser running first. Fail closed regardless.
+      return res.status(401).json({
+        success: false,
+        message: 'Authentication required',
+        code: 'MISSING_TOKEN',
+      });
+    }
+
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).json({
+        success: false,
+        message: 'You do not have permission to perform this action',
+        code: 'FORBIDDEN',
+      });
+    }
+
+    next();
+  };
+}
+
+module.exports = { authenticateUser, requireRole };
+</file>
+
+<file path="server/src/middleware/errorHandler.js">
+const env = require('../config/env');
+
+// Consistent shape for every error response, per the API format we
+// committed to: { success: false, message, code }.
+function sendError(res, status, message, code) {
+  res.status(status).json({ success: false, message, code });
+}
+
+// Runs when no route matched the request at all.
+function notFoundHandler(req, res) {
+  sendError(res, 404, 'Resource not found', 'NOT_FOUND');
+}
+
+// The 4-argument signature (err, req, res, next) is what tells Express
+// "this is an error handler," not a normal middleware. Express detects
+// this by argument count, so all four parameters must stay even though
+// `next` is unused here.
+// eslint-disable-next-line no-unused-vars
+function errorHandler(err, req, res, next) {
+  // Full detail goes to our own logs only — never to the client. This is
+  // the one place stack traces are allowed to exist.
+  console.error(err);
+
+  const status = err.status || 500;
+  const code = err.code || 'INTERNAL_ERROR';
+
+  // In development, a bit more detail is useful while we're building.
+  // In production, always the same generic message for 500s — no stack
+  // traces, no SQL, no internal detail reaching the client.
+  const message =
+    status === 500 && env.nodeEnv === 'production'
+      ? 'Something went wrong. Please try again later.'
+      : err.message || 'Something went wrong. Please try again later.';
+
+  sendError(res, status, message, code);
+}
+
+module.exports = { errorHandler, notFoundHandler };
+</file>
+
+<file path="server/src/middleware/rateLimiter.js">
+const rateLimit = require('express-rate-limit');
+
+// Tighter than a general API limit, on purpose: login/register are exactly
+// what a brute-force or credential-stuffing script would hammer. 10
+// attempts per 15 minutes per IP is generous for a real user (who
+// mistypes a password a handful of times) but slow enough to make
+// automated guessing impractical.
+const authRateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    message: 'Too many attempts. Please try again later.',
+    code: 'RATE_LIMITED',
+  },
+});
+
+module.exports = authRateLimiter;
+</file>
+
+<file path="server/src/routes/adminRoutes.js">
+const express = require('express');
+const { authenticateUser, requireRole } = require('../middleware/authenticateUser');
+const adminController = require('../controllers/adminController');
+
+const router = express.Router();
+
+// Applied to EVERY route on this router, not per-route — this means a
+// future route added here can't accidentally ship unprotected. Defense
+// against the exact kind of mistake that's easy to make one Friday
+// afternoon: adding a new admin endpoint and forgetting the guard.
+router.use(authenticateUser, requireRole('ADMIN'));
+
+router.get('/users', adminController.listUsers);
+router.get('/users/:id', adminController.getUserById);
+router.patch('/users/:id/role', adminController.updateUserRole);
+router.patch('/users/:id/status', adminController.updateUserStatus);
+router.get('/audit-logs', adminController.listAuditLogs);
+router.get('/login-attempts', adminController.listLoginAttempts);
+
+module.exports = router;
+</file>
+
+<file path="server/src/routes/authRoutes.js">
+const express = require('express');
+const authController = require('../controllers/authController');
+const authRateLimiter = require('../middleware/rateLimiter');
+
+const router = express.Router();
+
+// Public routes — rate limited on register/login/refresh, the three an
+// attacker could actually abuse (guessing passwords, credential stuffing,
+// hammering refresh). logout has no brute-force value, left unlimited.
+router.post('/register', authRateLimiter, authController.register);
+router.post('/login', authRateLimiter, authController.login);
+router.post('/logout', authController.logout);
+router.post('/refresh', authRateLimiter, authController.refresh);
+router.post('/resend-verification', authRateLimiter, authController.resendVerification);
+router.post('/forgot-password', authRateLimiter, authController.forgotPassword);
+router.post('/reset-password', authRateLimiter, authController.resetPassword);
+
+module.exports = router;
+</file>
+
+<file path="server/src/routes/health.js">
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.json({ success: true, data: { status: 'ok' } });
+});
+
+module.exports = router;
+</file>
+
+<file path="server/src/routes/users.js">
+const express = require('express');
+const { authenticateUser } = require('../middleware/authenticateUser');
+const userController = require('../controllers/userController');
+const authRateLimiter = require('../middleware/rateLimiter');
+
+const router = express.Router();
+
+router.get('/me', authenticateUser, userController.getMe);
+router.patch('/me', authenticateUser, userController.updateMe);
+// Reuses the same rate limiter as login/register — changePassword makes a
+// real sign-in attempt internally to verify the current password, so it's
+// just as brute-forceable as the login endpoint itself.
+router.patch('/me/password', authenticateUser, authRateLimiter, userController.changePassword);
+
+module.exports = router;
+</file>
+
+<file path="server/src/services/adminService.js">
+const { supabaseAdmin } = require('../config/supabaseClients');
+
+const DEFAULT_PAGE_SIZE = 20;
+const VALID_ROLES = ['USER', 'ADMIN', 'MODERATOR'];
+
+function notFound(message = 'User not found') {
+  const err = new Error(message);
+  err.status = 404;
+  err.code = 'USER_NOT_FOUND';
+  return err;
+}
+
+async function logAudit({ userId, action, metadata }) {
+  const { error } = await supabaseAdmin.from('audit_logs').insert({
+    user_id: userId,
+    action,
+    metadata,
+  });
+  // Don't let an audit-log failure block the actual admin action — but
+  // don't silently swallow it either, since losing audit trail entries
+  // is itself a real problem worth knowing about.
+  if (error) {
+    console.error('Failed to write audit log:', error.message);
+  }
+}
+
+async function listUsers({ page = 1, limit = DEFAULT_PAGE_SIZE, search = '' }) {
+  const from = (page - 1) * limit;
+  const to = from + limit - 1;
+
+  let query = supabaseAdmin
+    .from('profiles')
+    .select('id, name, role, is_active, created_at', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, to);
+
+  if (search) {
+    query = query.ilike('name', `%${search}%`);
+  }
+
+  const { data: profiles, error, count } = await query;
+  if (error) {
+    const err = new Error('Failed to list users');
+    err.status = 500;
+    throw err;
+  }
+
+  // profiles has no email column (that's Supabase's own auth.users data,
+  // which we don't duplicate). We fetch it separately and merge in
+  // memory. NOTE: this pulls up to 1000 auth accounts per call to build
+  // the id->email map — fine at portfolio/small-project scale, but would
+  // need a per-ID lookup instead if this ever had a large user base.
+  const { data: authList } = await supabaseAdmin.auth.admin.listUsers({ page: 1, perPage: 1000 });
+  const emailById = new Map((authList?.users || []).map((u) => [u.id, u.email]));
+
+  const users = profiles.map((p) => ({
+    id: p.id,
+    name: p.name,
+    email: emailById.get(p.id) || null,
+    role: p.role,
+    isActive: p.is_active,
+    createdAt: p.created_at,
+  }));
+
+  return { users, total: count ?? 0, page, limit };
+}
+
+async function getUserById(id) {
+  const { data: profile, error } = await supabaseAdmin
+    .from('profiles')
+    .select('id, name, role, is_active, created_at, updated_at')
+    .eq('id', id)
+    .single();
+
+  if (error || !profile) {
+    throw notFound();
+  }
+
+  const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(id);
+
+  return {
+    id: profile.id,
+    name: profile.name,
+    email: authUser?.user?.email || null,
+    role: profile.role,
+    isActive: profile.is_active,
+    createdAt: profile.created_at,
+    updatedAt: profile.updated_at,
+    emailConfirmedAt: authUser?.user?.email_confirmed_at || null,
+  };
+}
+
+async function updateUserRole({ targetUserId, newRole, actingAdminId }) {
+  if (!VALID_ROLES.includes(newRole)) {
+    const err = new Error(`Role must be one of: ${VALID_ROLES.join(', ')}`);
+    err.status = 400;
+    err.code = 'INVALID_ROLE';
+    throw err;
+  }
+
+  // Prevent an admin from locking themselves out by accident.
+  if (targetUserId === actingAdminId) {
+    const err = new Error("You can't change your own role");
+    err.status = 400;
+    err.code = 'CANNOT_MODIFY_SELF';
+    throw err;
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from('profiles')
+    .update({ role: newRole })
+    .eq('id', targetUserId)
+    .select('id, role')
+    .single();
+
+  if (error || !data) {
+    throw notFound();
+  }
+
+  await logAudit({
+    userId: actingAdminId,
+    action: 'ROLE_CHANGED',
+    metadata: { targetUserId, newRole },
+  });
+
+  return data;
+}
+
+async function updateUserStatus({ targetUserId, isActive, actingAdminId }) {
+  if (targetUserId === actingAdminId) {
+    const err = new Error("You can't disable your own account");
+    err.status = 400;
+    err.code = 'CANNOT_MODIFY_SELF';
+    throw err;
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from('profiles')
+    .update({ is_active: isActive })
+    .eq('id', targetUserId)
+    .select('id, is_active')
+    .single();
+
+  if (error || !data) {
+    throw notFound();
+  }
+
+  await logAudit({
+    userId: actingAdminId,
+    action: isActive ? 'ACCOUNT_ENABLED' : 'ACCOUNT_DISABLED',
+    metadata: { targetUserId },
+  });
+
+  return data;
+}
+
+async function listAuditLogs({ page = 1, limit = DEFAULT_PAGE_SIZE }) {
+  const from = (page - 1) * limit;
+  const to = from + limit - 1;
+
+  const { data, error, count } = await supabaseAdmin
+    .from('audit_logs')
+    .select('id, user_id, action, metadata, ip_address, created_at', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, to);
+
+  if (error) {
+    const err = new Error('Failed to list audit logs');
+    err.status = 500;
+    throw err;
+  }
+
+  return { logs: data, total: count ?? 0, page, limit };
+}
+
+async function listLoginAttempts({ page = 1, limit = DEFAULT_PAGE_SIZE }) {
+  const from = (page - 1) * limit;
+  const to = from + limit - 1;
+
+  const { data, error, count } = await supabaseAdmin
+    .from('login_attempts')
+    .select('id, user_id, email, ip_address, success, created_at', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, to);
+
+  if (error) {
+    const err = new Error('Failed to list login attempts');
+    err.status = 500;
+    throw err;
+  }
+
+  return { attempts: data, total: count ?? 0, page, limit };
+}
+
+module.exports = {
+  listUsers,
+  getUserById,
+  updateUserRole,
+  updateUserStatus,
+  listAuditLogs,
+  listLoginAttempts,
+};
+</file>
+
+<file path="server/src/services/userService.js">
+const { supabaseAdmin } = require('../config/supabaseClients');
+
+async function getProfileById(userId) {
+  const { data, error } = await supabaseAdmin
+    .from('profiles')
+    .select('id, name, role, is_active, created_at, updated_at')
+    .eq('id', userId)
+    .single();
+
+  if (error || !data) {
+    const err = new Error('Profile not found');
+    err.status = 404;
+    err.code = 'PROFILE_NOT_FOUND';
+    throw err;
+  }
+
+  return data;
+}
+
+// Deliberately whitelists updatable fields rather than accepting whatever
+// the client sends — e.g. role and is_active must NEVER be settable here,
+// only through the admin endpoints. This is the actual enforcement point,
+// not just something the frontend happens to not expose.
+async function updateProfile(userId, updates) {
+  const allowed = {};
+  if (updates.name !== undefined) {
+    allowed.name = updates.name;
+  }
+
+  if (Object.keys(allowed).length === 0) {
+    const err = new Error('No valid fields to update');
+    err.status = 400;
+    err.code = 'NO_UPDATES';
+    throw err;
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from('profiles')
+    .update(allowed)
+    .eq('id', userId)
+    .select('id, name, role, is_active, created_at, updated_at')
+    .single();
+
+  if (error || !data) {
+    const err = new Error('Failed to update profile');
+    err.status = 500;
+    throw err;
+  }
+
+  return data;
+}
+
+module.exports = { getProfileById, updateProfile };
+</file>
+
+<file path="server/src/validators/passwordValidator.js">
+const MIN_LENGTH = 8;
+
+// Server-side enforcement — the frontend already checks this for UX, but
+// that's trivially bypassable (anyone can call the API directly). This is
+// the check that actually matters.
+function validatePasswordStrength(password) {
+  if (typeof password !== 'string' || password.length < MIN_LENGTH) {
+    return { valid: false, message: `Password must be at least ${MIN_LENGTH} characters.` };
+  }
+  if (!/[A-Z]/.test(password)) {
+    return { valid: false, message: 'Password must contain at least one uppercase letter.' };
+  }
+  if (!/[0-9]/.test(password)) {
+    return { valid: false, message: 'Password must contain at least one number.' };
+  }
+  return { valid: true };
+}
+
+module.exports = { validatePasswordStrength };
+</file>
+
+<file path="server/src/app.js">
+const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const env = require('./config/env');
+const healthRoutes = require('./routes/health');
+const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/authRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+const { errorHandler, notFoundHandler } = require('./middleware/errorHandler');
+
+const app = express();
+
+// Adds a set of protective HTTP response headers (e.g. disabling MIME
+// sniffing, restricting where the page can be framed) as a baseline
+// defense, before any of our own logic runs.
+app.use(helmet());
+
+// Only our known frontend origin may call this API with credentials
+// (cookies, later on). No wildcard '*' — that would defeat the point of
+// restricting this at all for authenticated requests.
+app.use(
+  cors({
+    origin: env.frontendUrl,
+    credentials: true,
+  })
+);
+
+// Parses incoming JSON request bodies into req.body for every route below.
+app.use(express.json());
+app.use(cookieParser());
+
+app.use('/api/health', healthRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/admin', adminRoutes);
+
+// Must come after all real routes: only reached if nothing above matched.
+app.use(notFoundHandler);
+
+// Must be the LAST app.use() call: Express only treats a 4-argument
+// function as an error handler, and only routes errors to it if it's
+// registered after everything that might throw or call next(err).
+app.use(errorHandler);
+
+module.exports = app;
+</file>
+
+<file path="server/src/server.js">
+const app = require('./app');
+const env = require('./config/env');
+
+app.listen(env.port, () => {
+  console.log(`SecureAuth server running on port ${env.port} (${env.nodeEnv})`);
+});
+</file>
+
+<file path="server/.gitignore">
+node_modules/
+.env
+*.log
+</file>
+
+<file path="server/package.json">
+{
+  "name": "secureauth-server",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "migrate": "node src/db/migrate.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^7.1.0",
+    "pg": "^8.12.0"
+  }
+}
+</file>
+
+<file path="cookies.txt">
+# Netscape HTTP Cookie File
+# https://curl.se/docs/http-cookies.html
+# This file was generated by libcurl! Edit at your own risk.
+
+#HttpOnly_localhost	FALSE	/	FALSE	1789854984	refresh_token	s44u3ywcewyy
+#HttpOnly_localhost	FALSE	/	FALSE	1787266584	access_token	eyJhbGciOiJFUzI1NiIsImtpZCI6Ijc4YzNiNzI4LWRkODYtNGE5MS05Y2VhLTY4YTM1MzU4MGFjMCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2p1Y2J5cHZscXF3Z3JlcW9tcG9hLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI3MzQ5ZjNhYy1lYTlkLTQ3OTgtOGQ3Yi04NjI5NWE5MTdjN2MiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg3MjY2NTgyLCJpYXQiOjE3ODcyNjI5ODIsImVtYWlsIjoiZGV2ZXNocmF3YXQyMTI2QGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzg3MjYyOTgyfV0sInNlc3Npb25faWQiOiIyODU2YzI1YS1mNWQ0LTQ1NWQtYTIyYi01NjM1ZjIwM2E2NzYiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.ONR0iV6I-7rJVwCHOh3pqK3TsRDvFFXYGZK6h1bR7di3RllJEq42AJA72O57fU1cFtCliO9LbKMCfspgk3KvTw
+</file>
+
+<file path="README.md">
+# SecureAuth — Progress README
+
+A full-stack authentication & access control system, built incrementally with Supabase Auth + Express + React.
+
+---
+
+## Stack
+
+- **Frontend**: React + Vite + Tailwind v4 + React Router + Axios
+- **Backend**: Node.js + Express (layered: Route → Controller → Service)
+- **Database/Auth**: Supabase (Postgres + Supabase Auth)
+- **Session model**: HTTP-only cookies, backend-managed (not localStorage)
+
+---
+
+## Phases completed
+
+### Phase 1 — Architecture
+- Feature list, ER diagram, API endpoint list, folder structure, security architecture defined upfront.
+
+### Phase 2 — Database schema (Supabase)
+- `public.profiles` — extends `auth.users` 1:1 (role, is_active, name)
+- Trigger: `auth.users` insert → auto-creates matching `profiles` row
+- `public.login_attempts`, `public.audit_logs` — admin-only, RLS enabled with zero policies
+- RLS on `profiles`: users can `SELECT` their own row only
+- Verified locally: trigger fires correctly, cascade delete works, RLS blocks cross-user reads
+
+### Phase 3 — Express backend setup
+- `app.js` / `server.js` split, Helmet, CORS (single allowed origin, credentials enabled)
+- Centralized error handler (`{success, message, code}` shape, no stack traces to client)
+- Env var validation at startup (fails loudly if `.env` is incomplete)
+
+### Phase 4 — Authentication
+- `authenticateUser` — verifies Supabase JWT via `getClaims()` (local verification, no per-request network call), checks `profiles.is_active`
+- `requireRole()` — RBAC middleware, reuses `req.user.role`, no extra DB query
+- `register`, `login`, `logout`, `refresh` — cookies set `HttpOnly`, `Secure` (prod), `SameSite=Strict`
+- **`logout` actually revokes the session server-side** via `supabaseAdmin.auth.admin.signOut()` — proven with a real test (old cookie fails to refresh after logout)
+- Rate limiting on `register` / `login` / `refresh` (10 attempts / 15 min, shared bucket)
+- `GET /api/users/me` — first protected route, working end-to-end against live Supabase
+
+### Phase 5 — Frontend
+- `AuthContext` (user, isAuthenticated, loading, login/register/logout/refreshUser)
+- Axios client: `withCredentials: true`, auto-refresh-on-401 interceptor
+- `ProtectedRoute` / `AdminRoute` (UX convenience only — backend is the real enforcement)
+- Pages: Landing, Login, Register, Dashboard, 404
+- Confirmed working end-to-end in a real browser: register → session persists across refresh → logout redirects correctly
+- **Fixes after initial build**: email-confirmation-required state handled properly (was silently failing before), resend-confirmation flow added, password show/hide toggle, logo links back to home, `login` no longer leaks raw Supabase/network error text
+
+### Phase 6 — Admin dashboard + RBAC in practice
+- `GET /api/admin/users` — paginated, searchable by name, merges `profiles` + Supabase auth emails
+- `GET /api/admin/users/:id`, `PATCH /api/admin/users/:id/role`, `PATCH /api/admin/users/:id/status`
+- `GET /api/admin/audit-logs`, `GET /api/admin/login-attempts` — first time these (Phase 2) tables became readable
+- Router-level guard: `router.use(authenticateUser, requireRole('ADMIN'))` — every admin route protected by default, can't add a new one and forget the guard
+- Self-modification guards: an admin can't change their own role or disable their own account
+- **Closed a real gap**: `login_attempts` existed since Phase 2 but nothing ever wrote to it — every login attempt (success/failure) is now recorded
+- Frontend: searchable/paginated `AdminUsers` table, inline role dropdown, status toggle
+- Verified: every admin route confirmed to reject with no auth; self-modification guards confirmed to fire before any DB call; full flow confirmed working end-to-end after resolving a Supabase permissions issue
+
+---
+
+## Known open items (not yet fixed)
+
+- Centralized error handler leaks raw JSON-parse error text on malformed request bodies
+- No password-strength validation enforced server-side (frontend-only currently)
+- `adminService.listUsers` fetches up to 1000 auth accounts per call to build the email lookup — fine at current scale, would need a smarter per-ID lookup for a large user base
+
+---
+
+## Not yet built
+
+- Profile editing / change password
+- Forgot / reset password flow
+- Automated tests
+- Deployment
+
+---
+
+## Lessons from today's debugging session (worth remembering)
+
+- **Local project folders can silently diverge from what's actually running.** A folder move (OneDrive → `C:\SecureAuth`) plus multiple partial merges caused a long debugging chase for a bug that didn't actually exist in the code. When something behaves inexplicably and the code looks right, verify *which* files are actually being served/run before assuming the code is wrong.
+- **The rate limiter works — including on you.** Repeated manual testing across a long debugging session can trip the same 10-attempts/15-min limit built for brute-force protection. `RateLimit-Reset` header tells you exactly how long to wait.
+- **`curl` is the fastest way to isolate frontend vs. backend issues.** When browser behavior is confusing, testing the same request directly against the API skips the browser entirely and tells you immediately which half of the stack the problem is actually in.
+
+---
+
+## How we're moving forward
+
+Each phase follows the same loop:
+1. Explain the concept before building it
+2. Build the smallest working version
+3. **Test it for real** (locally, then against live Supabase) — not just read the code
+4. Fix what breaks, verify the fix
+5. Package + hand off, only then move to the next phase
+
+Next up (pick one): **Profile/password management**, **Forgot password flow**, or **security hardening pass** on the known open items above.
+</file>
+
+</files>
