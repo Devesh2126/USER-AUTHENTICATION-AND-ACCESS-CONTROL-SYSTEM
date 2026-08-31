@@ -7,26 +7,17 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Called on app load, and after login/register, to sync our state with
-  // the real source of truth (the cookie-based session on the backend).
   const refreshUser = useCallback(async () => {
     try {
       const { data } = await api.get('/users/me');
       setUser(data.data);
-      return data.data;
-    } catch (err) {
+    } catch {
       setUser(null);
-      // Re-throw if called during an active login flow
-      if (err.response?.status === 403) {
-        throw err;
-      }
     } finally {
       setLoading(false);
     }
   }, []);
 
-  // On first load: is there already a valid session cookie from a
-  // previous visit? We don't know until we ask the backend.
   useEffect(() => {
     refreshUser();
   }, [refreshUser]);

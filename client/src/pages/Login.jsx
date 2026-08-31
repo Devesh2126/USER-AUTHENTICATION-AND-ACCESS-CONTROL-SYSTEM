@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Loader2, MailCheck } from 'lucide-react';
 import AuthLayout from '../components/AuthLayout';
 import FormField from '../components/FormField';
+import SpecularButton from '../components/SpecularButton';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 
@@ -28,9 +29,6 @@ export default function Login() {
       await login(email, password);
       navigate('/dashboard');
     } catch (err) {
-      // Backend deliberately returns a generic message for bad
-      // credentials (account enumeration protection) — we just surface
-      // whatever it sent rather than inventing our own wording.
       setError(err.response?.data?.message || 'Something went wrong. Please try again.');
       setErrorCode(err.response?.data?.code || '');
     } finally {
@@ -44,9 +42,6 @@ export default function Login() {
       await api.post('/auth/resend-verification', { email });
       setResendState('sent');
     } catch {
-      // Resend endpoint always returns success regardless of outcome
-      // (enumeration protection) — a network-level failure here is the
-      // only realistic error path, so just let them try again.
       setResendState('idle');
     }
   }
@@ -74,13 +69,13 @@ export default function Login() {
         />
 
         <div className="-mt-2 mb-4 text-right">
-          <Link to="/forgot-password" className="text-xs text-accent hover:underline">
+          <Link to="/forgot-password" className="text-xs text-[#8b5cf6] hover:text-[#c084fc] transition-colors">
             Forgot password?
           </Link>
         </div>
 
         {error && (
-          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg/10 border border-danger/20 text-sm text-danger">
             <p>{error}</p>
 
             {errorCode === 'EMAIL_NOT_CONFIRMED' && (
@@ -95,7 +90,7 @@ export default function Login() {
                     type="button"
                     onClick={handleResend}
                     disabled={resendState === 'sending'}
-                    className="text-xs font-medium text-danger underline hover:no-underline disabled:opacity-60"
+                    className="text-xs font-medium text-danger underline hover:no-underline disabled:opacity-60 cursor-pointer"
                   >
                     {resendState === 'sending' ? 'Sending…' : 'Resend confirmation email'}
                   </button>
@@ -105,21 +100,25 @@ export default function Login() {
           </div>
         )}
 
-        <button
+        <SpecularButton
           type="submit"
           disabled={submitting}
-          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
-            disabled:opacity-60 disabled:cursor-not-allowed
-            text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+          className="w-full mt-4"
+          size="md"
+          radius={12}
+          tint="#ffffff"
+          tintOpacity={1} /* Solid white button */
+          textColor="#000000" /* Black text */
+          baseColor="#e5e5e5"
+          lineColor="#8b5cf6" /* Purple highlight to match threads */
         >
-          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
           {submitting ? 'Logging in…' : 'Log in'}
-        </button>
+        </SpecularButton>
       </form>
 
-      <p className="mt-6 text-sm text-muted text-center">
+      <p className="mt-6 text-sm text-white/50 text-center">
         Don't have an account?{' '}
-        <Link to="/register" className="text-accent font-medium hover:underline">
+        <Link to="/register" className="text-[#8b5cf6] font-medium hover:text-[#c084fc] transition-colors">
           Sign up
         </Link>
       </p>

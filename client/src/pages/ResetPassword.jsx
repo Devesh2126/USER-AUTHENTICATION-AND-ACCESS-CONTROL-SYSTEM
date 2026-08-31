@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { Loader2, ShieldCheck, ShieldAlert } from 'lucide-react';
+import { ShieldCheck, ShieldAlert } from 'lucide-react';
 import AuthLayout from '../components/AuthLayout';
 import FormField from '../components/FormField';
+import SpecularButton from '../components/SpecularButton';
 import api from '../services/api';
 import { PASSWORD_RULES, isPasswordValid } from '../utils/passwordRules';
 
@@ -19,7 +20,6 @@ export default function ResetPassword() {
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    // Fallback: check if Supabase routed with hash params (#token_hash=...)
     if (!tokenHash && location.hash) {
       const hashParams = new URLSearchParams(location.hash.replace('#', '?'));
       const hashToken = hashParams.get('token_hash');
@@ -37,7 +37,7 @@ export default function ResetPassword() {
       <AuthLayout title="Invalid link">
         <div className="text-center py-2">
           <ShieldAlert className="w-10 h-10 text-danger mx-auto mb-4" strokeWidth={1.5} />
-          <p className="text-sm text-muted mb-6">
+          <p className="text-sm text-white/70 mb-6">
             This password reset link is missing or malformed. Please request a new one.
           </p>
           <Link
@@ -80,16 +80,19 @@ export default function ResetPassword() {
       <AuthLayout title="Password reset">
         <div className="text-center py-2">
           <ShieldCheck className="w-10 h-10 text-success mx-auto mb-4" strokeWidth={1.5} />
-          <p className="text-sm text-muted mb-6">
+          <p className="text-sm text-white/70 mb-6">
             Your password has been updated. Any other active sessions have been signed out —
             please log in again with your new password.
           </p>
-          <button
+          <SpecularButton
             onClick={() => navigate('/login')}
-            className="bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
+            size="md"
+            tint="#4338ca"
+            tintOpacity={0.2}
+            lineColor="#863bff"
           >
             Go to login
-          </button>
+          </SpecularButton>
         </div>
       </AuthLayout>
     );
@@ -115,10 +118,9 @@ export default function ResetPassword() {
               return (
                 <li
                   key={rule.label}
-                  className={`flex items-center gap-1.5 text-xs ${passed ? 'text-success' : 'text-muted'
-                    }`}
+                  className={`flex items-center gap-1.5 text-xs ${passed ? 'text-success' : 'text-white/40'}`}
                 >
-                  <span className={`w-1.5 h-1.5 rounded-full ${passed ? 'bg-success' : 'bg-muted'}`} />
+                  <span className={`w-1.5 h-1.5 rounded-full ${passed ? 'bg-success' : 'bg-white/40'}`} />
                   {rule.label}
                 </li>
               );
@@ -140,22 +142,23 @@ export default function ResetPassword() {
         />
 
         {error && (
-          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg/10 border border-danger/20 text-sm text-danger">
             {error}
           </div>
         )}
 
-        <button
+        <SpecularButton
           type="submit"
           disabled={submitting}
-          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
-            disabled:opacity-60 disabled:cursor-not-allowed
-            text-white text-sm font-medium py-2.5 rounded-lg transition-colors cursor-pointer"
+          className="w-full mt-4"
+          size="md"
+          tint="#4338ca"
+          tintOpacity={0.2}
+          lineColor="#863bff"
         >
-          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
           {submitting ? 'Resetting…' : 'Reset password'}
-        </button>
+        </SpecularButton>
       </form>
     </AuthLayout>
   );
-} 
+}

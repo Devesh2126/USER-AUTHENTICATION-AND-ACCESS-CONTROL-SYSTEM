@@ -5,6 +5,7 @@ import AuthLayout from '../components/AuthLayout';
 import FormField from '../components/FormField';
 import { useAuth } from '../context/AuthContext';
 import { PASSWORD_RULES, isPasswordValid } from '../utils/passwordRules';
+import SpecularButton from '../components/SpecularButton';
 
 export default function Register() {
   const { register } = useAuth();
@@ -54,16 +55,19 @@ export default function Register() {
       <AuthLayout title="Check your email">
         <div className="text-center py-2">
           <MailCheck className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
-          <p className="text-sm text-muted mb-6">
-            We've sent a confirmation link to <span className="text-ink font-medium">{email}</span>.
+          <p className="text-sm text-white/70 mb-6">
+            We've sent a confirmation link to <span className="text-white font-medium">{email}</span>.
             Click it, then come back and log in.
           </p>
-          <Link
-            to="/login"
-            className="inline-block bg-accent hover:bg-accent-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
+          <SpecularButton
+            onClick={() => navigate('/login')}
+            size="md"
+            tint="#4338ca"
+            tintOpacity={0.2}
+            lineColor="#863bff"
           >
             Go to login
-          </Link>
+          </SpecularButton>
         </div>
       </AuthLayout>
     );
@@ -107,9 +111,8 @@ export default function Register() {
               return (
                 <li
                   key={rule.label}
-                  className={`flex items-center gap-1.5 text-xs ${
-                    passed ? 'text-success' : 'text-muted'
-                  }`}
+                  className={`flex items-center gap-1.5 text-xs ${passed ? 'text-success' : 'text-white/40'
+                    }`}
                 >
                   {passed ? (
                     <Check className="w-3.5 h-3.5" strokeWidth={2.5} />
@@ -137,26 +140,27 @@ export default function Register() {
         />
 
         {error && (
-          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg border border-danger/20 text-sm text-danger">
+          <div className="mb-4 px-3 py-2 rounded-lg bg-danger-bg/10 border border-danger/20 text-sm text-danger">
             {error}
           </div>
         )}
 
-        <button
+        <SpecularButton
           type="submit"
           disabled={submitting}
-          className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover
-            disabled:opacity-60 disabled:cursor-not-allowed
-            text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+          className="w-full mt-4"
+          size="md"
+          tint="#4338ca"
+          tintOpacity={0.2}
+          lineColor="#863bff"
         >
-          {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
           {submitting ? 'Creating account…' : 'Create account'}
-        </button>
+        </SpecularButton>
       </form>
 
-      <p className="mt-6 text-sm text-muted text-center">
+      <p className="mt-6 text-sm text-white/60 text-center">
         Already have an account?{' '}
-        <Link to="/login" className="text-accent font-medium hover:underline">
+        <Link to="/login" className="text-accent font-medium hover:underline hover:text-accent-hover">
           Log in
         </Link>
       </p>
