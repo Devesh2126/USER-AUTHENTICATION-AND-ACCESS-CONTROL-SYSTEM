@@ -297,11 +297,19 @@ exports.resetPassword = async (req, res, next) => {
     // that email address — this IS the identity check for this flow
     // (there's no "current password" to verify, since the whole point is
     // the user can't log in normally).
-    const { data, error } = await supabaseAuth.auth.verifyOtp({
+   const { data, error } = await supabaseAuth.auth.verifyOtp({
       token_hash: tokenHash,
       type: 'recovery',
     });
 
+    // TEMPORARILY SEND THE REAL ERROR TO THE FRONTEND
+    if (error || !data.user) {
+      return res.status(400).json({
+        success: false,
+        message: `Supabase says: ${error?.message || 'No user found in response'}`,
+        code: 'INVALID_RESET_TOKEN',
+      });
+    }
     if (error || !data.user) {
       return res.status(400).json({
         success: false,
