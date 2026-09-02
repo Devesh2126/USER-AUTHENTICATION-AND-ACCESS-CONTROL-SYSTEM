@@ -298,7 +298,7 @@ exports.resetPassword = async (req, res, next) => {
     // (there's no "current password" to verify, since the whole point is
     // the user can't log in normally).
     const { data, error } = await supabaseAuth.auth.verifyOtp({
-      token_hash: req.body.token,
+      token_hash: tokenHash,
       type: 'recovery',
     });
 
